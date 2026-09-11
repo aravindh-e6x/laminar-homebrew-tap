@@ -1,9 +1,9 @@
 class Laminar < Formula
   desc "Distributed data engine for query, ETL, and streaming workloads"
   homepage "https://github.com/aravindh-e6x/laminar-homebrew-tap"
-  url "https://github.com/aravindh-e6x/laminar-homebrew-tap/releases/download/v0.1.0/laminar-v0.1.0-aarch64-apple-darwin.tar.gz"
-  version "0.1.0"
-  sha256 "89018e47c068aeef4509d26252db83b2837aeecda72c18326ed5087f2e8c38e8"
+  url "https://github.com/aravindh-e6x/laminar-homebrew-tap/releases/download/v0.1.1/laminar-v0.1.1-aarch64-apple-darwin.tar.gz"
+  version "0.1.1"
+  sha256 "b7d7d8643b3c5720dec0c3ed28272ce75f198e349097cee9e1999d2da92f0c0c"
   license any_of: ["Apache-2.0", "MIT"]
 
   depends_on :macos
@@ -11,6 +11,7 @@ class Laminar < Formula
 
   def install
     bin.install "laminar"
+    pkgshare.install "console"
   end
 
   test do
