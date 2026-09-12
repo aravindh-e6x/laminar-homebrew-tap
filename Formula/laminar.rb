@@ -1,9 +1,9 @@
 class Laminar < Formula
   desc "Distributed data engine for query, ETL, and streaming workloads"
   homepage "https://github.com/aravindh-e6x/laminar-homebrew-tap"
-  url "https://github.com/aravindh-e6x/laminar-homebrew-tap/releases/download/v0.1.20/laminar-v0.1.20-aarch64-apple-darwin.tar.gz"
-  version "0.1.20"
-  sha256 "8061b542fd33906a7d134d87cd74f5792fbd56caef95bec30afc95bd19b885fe"
+  url "https://github.com/aravindh-e6x/laminar-homebrew-tap/releases/download/v0.1.21/laminar-v0.1.21-aarch64-apple-darwin.tar.gz"
+  version "0.1.21"
+  sha256 "3838b2a7e6abc6bc6661d90bb5dd90fa56bfa5fd1f220a19f6eb05cc0838d895"
   license any_of: ["Apache-2.0", "MIT"]
 
   depends_on :macos
