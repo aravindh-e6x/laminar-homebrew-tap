@@ -1,9 +1,9 @@
 class LaminarDemo < Formula
   desc "Self-contained local demo of the Laminar data engine"
   homepage "https://github.com/aravindh-e6x/laminar-homebrew-tap"
-  url "https://github.com/aravindh-e6x/laminar-homebrew-tap/releases/download/v0.1.24/laminar-demo-v0.1.24-aarch64-apple-darwin.tar.gz"
-  version "0.1.24"
-  sha256 "a8ce9c1db692d99b7d0bcf08fd92881c6de1b4893045f7baa22f817e30411278"
+  url "https://github.com/aravindh-e6x/laminar-homebrew-tap/releases/download/v0.1.25/laminar-demo-v0.1.25-aarch64-apple-darwin.tar.gz"
+  version "0.1.25"
+  sha256 "26af7e620332d07e906559b2c334c0ccabf14e26e5567298aa650432e5f86b3a"
   license any_of: ["Apache-2.0", "MIT"]
 
   depends_on :macos
