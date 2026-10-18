@@ -32,11 +32,23 @@ The old `laminar-demo` formula has been removed. The `laminar` package includes
 the console and notebook runtime. If the old demo is installed, remove it with
 `brew uninstall laminar-demo`, then install `aravindh-e6x/laminar/laminar`.
 
-If Laminar was installed from `e6data/tap`, add this tap and run:
+## Switch from the organization tap
+
+Keep only one Laminar tap. Homebrew can fail while fixing library links when
+both `e6data/tap` and this tap define `laminar`, even with a fully qualified
+install command.
+
+After adding this tap, switch an existing organization-tap install with:
 
 ```sh
-brew reinstall aravindh-e6x/laminar/laminar
+brew trust --formula e6data/tap/laminar
+brew uninstall e6data/tap/laminar
+brew untap e6data/tap
+brew install aravindh-e6x/laminar/laminar
 ```
+
+Skip the uninstall command if the organization tap's package is not installed.
+Application data in `~/Library/Application Support/Laminar` stays in place.
 
 ## Releases
 
