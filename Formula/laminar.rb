@@ -1,19 +1,35 @@
 class Laminar < Formula
-  desc "Distributed data engine for query, ETL, and streaming workloads"
-  homepage "https://github.com/aravindh-e6x/laminar-homebrew-tap"
-  url "https://github.com/aravindh-e6x/laminar-homebrew-tap/releases/download/v0.1.26/laminar-v0.1.26-aarch64-apple-darwin.tar.gz"
-  version "0.1.26"
-  sha256 "692c05a60d2d3900545a968d4f3bbf5d6e4d8be9f6b5b9919f7f03bef19cd3bf"
-  license any_of: ["Apache-2.0", "MIT"]
+  desc "Unified engine for queries, streaming, and data workloads"
+  homepage "https://github.com/e6data/laminar-releases"
+  url "https://github.com/e6data/laminar-releases/releases/download/v0.1.1/laminar-0.1.1-darwin-arm64.zip"
+  version "0.1.1"
+  # The old personal tap used a different version sequence.
+  version_scheme 1
+  sha256 "19ecfd0d38c659e3068ff944a7f072c973b8467d60bf5c503bfc643fb47d81d6"
+  license any_of: ["MIT", "Apache-2.0"]
 
-  depends_on :macos
   depends_on arch: :arm64
+  depends_on macos: :sonoma
+
+  # ICU has its own extension signature. Keep bundled library IDs unchanged.
+  preserve_rpath
 
   def install
-    bin.install "laminar"
+    libexec.install Dir["*"]
+    bin.install_symlink libexec/"bin/laminar"
+  end
+
+  def caveats
+    <<~EOS
+      Run laminar, then open http://127.0.0.1:15003/.
+      Config and data are kept in ~/Library/Application Support/Laminar.
+      Set LAMINAR_HOME to use another directory.
+    EOS
   end
 
   test do
     assert_match version.to_s, shell_output("#{bin}/laminar --version")
+    system libexec/"runtime/python/bin/python3", "-I", "-c",
+           "import laminar, pyarrow, ipykernel, pandas; from pyspark.sql import SparkSession"
   end
 end
