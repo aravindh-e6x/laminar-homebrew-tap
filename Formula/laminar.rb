@@ -1,11 +1,11 @@
 class Laminar < Formula
   desc "Unified engine for queries, streaming, and data workloads"
   homepage "https://github.com/e6data/laminar-releases"
-  url "https://github.com/e6data/laminar-releases/releases/download/v0.1.1/laminar-0.1.1-darwin-arm64.zip"
-  version "0.1.1"
+  url "https://github.com/e6data/laminar-releases/releases/download/v0.1.2/laminar-0.1.2-darwin-arm64.zip"
+  version "0.1.2"
   # The old personal tap used a different version sequence.
   version_scheme 1
-  sha256 "19ecfd0d38c659e3068ff944a7f072c973b8467d60bf5c503bfc643fb47d81d6"
+  sha256 "69a317eb62921a87fad6d3cea1a9a2fa6234b6be010287f068274cf90dd046a1"
   license any_of: ["MIT", "Apache-2.0"]
 
   depends_on arch: :arm64
