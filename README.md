@@ -1,10 +1,26 @@
-# Laminar Homebrew tap
+# Laminar downloads and Homebrew tap
 
 Install the Laminar unified engine on Apple Silicon with macOS 14 or later.
 The package includes the console, a private Python runtime, notebook packages,
 and the ICU time-zone extension.
 
-## Install
+## Install with curl
+
+```sh
+curl -fsSL https://github.com/e6data/laminar-releases/releases/latest/download/install.sh | bash
+export PATH="$HOME/.local/bin:$PATH"
+laminar
+```
+
+Add the PATH line to your shell profile for new terminals. The installer uses
+the complete release package, verifies its SHA-256 checksum, and installs into
+`~/.local/share/laminar`. It does not need Homebrew or administrator access.
+The command is linked at `~/.local/bin/laminar`.
+
+Run the same installer again to update. To choose a version, append
+`| bash -s -- --version 0.1.2` in place of `| bash`.
+
+## Install with Homebrew
 
 ```sh
 brew tap aravindh-e6x/laminar https://github.com/aravindh-e6x/laminar-homebrew-tap.git
@@ -57,6 +73,6 @@ The formula downloads versioned archives from
 Each archive has a fixed SHA-256 checksum. Source code and build workflows
 remain in the main development repository.
 
-The release publisher updates this tap directly through SSH. Formula updates
+The release publisher updates this tap directly with its GitHub login. Formula updates
 do not require a pull request approval. Old Git history and release assets
 remain available.
